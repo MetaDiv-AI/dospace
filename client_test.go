@@ -39,19 +39,19 @@ func TestGetPublicURL(t *testing.T) {
 			endpoint:   "https://sgp1.digitaloceanspaces.com",
 			bucket:     "my-bucket",
 			objectName: "path/to/file.txt",
-			want:       "https://sgp1.digitaloceanspaces.com/my-bucket/path/to/file.txt",
+			want:       "https://my-bucket.sgp1.digitaloceanspaces.com/path/to/file.txt",
 		},
 		{
 			endpoint:   "https://nyc3.digitaloceanspaces.com",
 			bucket:     "assets",
 			objectName: "image.png",
-			want:       "https://nyc3.digitaloceanspaces.com/assets/image.png",
+			want:       "https://assets.nyc3.digitaloceanspaces.com/image.png",
 		},
 		{
 			endpoint:   "http://sgp1.digitaloceanspaces.com",
 			bucket:     "bucket",
 			objectName: "file",
-			want:       "https://sgp1.digitaloceanspaces.com/bucket/file",
+			want:       "https://bucket.sgp1.digitaloceanspaces.com/file",
 		},
 	}
 	for _, tt := range tests {
