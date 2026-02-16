@@ -153,5 +153,5 @@ func (c *Client) Exists(ctx context.Context, objectName string) (bool, error) {
 // Uses virtual-hosted-style: https://{bucket}.{region}.digitaloceanspaces.com/{objectKey}
 func (c *Client) GetPublicURL(objectName string) string {
 	baseURL := strings.TrimPrefix(strings.TrimPrefix(c.Endpoint, "https://"), "http://")
-	return fmt.Sprintf("https://%s.%s/%s/%s", c.Bucket, baseURL, c.Bucket, objectName)
+	return fmt.Sprintf("https://%s.%s/%s", c.Bucket, baseURL, objectName)
 }
